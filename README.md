@@ -150,7 +150,7 @@ from flask import Flask, render_template, Response
 
 * cd flask-video-streaming 確認是否有畫面
     - `python app.py`
-    - enter `http://你的ip:5000`
+    - enter `http://{你的ip}:5000`
     - 如下圖
     <img src="https://i.imgur.com/tTpVuWP.png" width="500px"/>
     
@@ -170,7 +170,7 @@ from flask import Flask, render_template, Response
             </td>
             <td>
                 <h1>Love turnturnturn</h1>
-                <img src=" http://你的ip:5000/video_feed ">"
+                <img src=" http://{你的ip}:5000/video_feed ">"
             </td>
         </tr>
     </table>
@@ -218,7 +218,7 @@ app.run('0.0.0.0', debug=True, port=443, ssl_context=('{your_path}/server.crt', 
             </td>
             <td>
                 <h1>Love turnturnturn</h1>
-                <img src=" https://你的ip:443/video_feed ">"
+                <img src=" https://{你的ip}:443/video_feed ">"
             </td>
         </tr>
     </table>
