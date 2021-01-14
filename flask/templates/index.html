@@ -1,0 +1,14 @@
+<html> <head> <script src="https://code.jquery.com/jquery-2.2.4.min.js" 
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+  crossorigin="anonymous"></script> <script 
+  src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.4.0/dist/tf.min.js"></script>
+    <script 
+    src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands"></script>
+  </head> 
+  <body>
+	  <button id="listen" onclick="listen()">Listen</button> 
+          <div id="console"></div>
+          <script src="{{ url_for('static', filename='index.js') }}"></script>  
+  </body> 
+</html>
+    
