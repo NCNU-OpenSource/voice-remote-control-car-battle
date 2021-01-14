@@ -228,7 +228,7 @@ app.run('0.0.0.0', debug=True, port=443, ssl_context=('{your_path}/server.crt', 
 
 <img src="https://i.imgur.com/Gh8rd8X.png" width="500px"/>
 
-<img src="https://i.imgur.com/IkvAVwT.png" width="500px"/>
+<img src="https://i.imgur.com/IkvAVwT.png" width="300px"/>
 
 
 ### **車子組裝**
@@ -243,7 +243,7 @@ app.run('0.0.0.0', debug=True, port=443, ssl_context=('{your_path}/server.crt', 
 
 
 <img src="https://i.imgur.com/6vdohUc.png" width="350px" alt="驅動板對應圖"/>
-<img src="https://i.imgur.com/gFrejPu.png" width="350px" alt="Pi GPIO 對應圖"/>
+<img src="https://i.imgur.com/gFrejPu.png" width="200px" alt="Pi GPIO 對應圖"/>
 
 
 1. 若輪子轉動很慢、馬達供電不足，可以多接線插於 5V、12V，Pi 上有兩個5V可以接
