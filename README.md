@@ -108,19 +108,16 @@ async function app() {
 - 用 Flask 在兩個 Pi 上各架一個 SERVER
 
 #### 在 `app.py` 存在的目錄底下輸入
-```html
-<div style="color:lightblue">
  ```
  export FLASK_APP=app.py
  flask run --host 0.0.0.0 --port 10838
  ```
  - host 0.0.0.0 代表跑在本機上，在同一個區網底下（例如連上同一個手機發的wifi）可以在瀏覽器輸入 Pi 的 ip 跟 port 來連上網站
  - port 基本上可任意（數字盡量大一點）
-</div>
-```
- > 建議在電腦上使用 Chrome 連入
+
+> 建議在電腦上使用 Chrome 連入
  
- 在 Chrome 網址列輸入`chrome://flags/`
+ 在 Chrome 網址列輸入 `chrome://flags/`
  找到 `Insecure origins treated as secure`
  輸入剛剛架起來的網站包括 port 後 enable 他
  ![](https://i.imgur.com/3Lc65Vo.png)
@@ -203,7 +200,7 @@ from flask import Flask, render_template, Response
 ```python
 # your_path: 放自己的路徑
 app = Flask(__name__)    
-app.run('0.0.0.0', debug=True, port=443, ssl_context=('your_path/server.crt', 'your_path/server.key'))  
+app.run('0.0.0.0', debug=True, port=443, ssl_context=('{your_path}/server.crt', '{your_path}/server.key'))  
 ```
 
 * cd flask-video-streaming/templates 修改 index.html
@@ -248,11 +245,10 @@ app.run('0.0.0.0', debug=True, port=443, ssl_context=('your_path/server.crt', 'y
 <img src="https://i.imgur.com/6vdohUc.png" width="350px" alt="驅動板對應圖"/>
 <img src="https://i.imgur.com/gFrejPu.png" width="350px" alt="Pi GPIO 對應圖"/>
 
-:::info
-1. 若輪子轉動很慢、馬達供電不足，可以多接線插於 5V、12V，Pi 上有兩個5V可以接
-2. **Enable A、Enable B 請勿拔掉，他們是用來控制馬達驅使轉動的方向**
-3. 依插線接孔的不同，會需調整成自己連接對應的方式
-:::
+! 1. 若輪子轉動很慢、馬達供電不足，可以多接線插於 5V、12V，Pi 上有兩個5V可以接
+! 2. **Enable A、Enable B 請勿拔掉，他們是用來控制馬達驅使轉動的方向**
+! 3. 依插線接孔的不同，會需調整成自己連接對應的方式
+
 
 
 ## DEMO 影片
