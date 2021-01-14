@@ -13,19 +13,17 @@ LSA Final Project---芽控車大亂鬥
 
 ### 所使用的設備材料
 - Pi 3 或 Pi 4 (Pi 4 效果會比 Pi 3好)
-![](https://i.imgur.com/9NFq0eY.png)
+<img src="https://i.imgur.com/9NFq0eY.png" width="300px"/>
 
 
 - 單層自走車底盤
-![](https://i.imgur.com/ABNOezr.png)
-
+<img src="https://i.imgur.com/ABNOezr.png" width="300px"/>
 
 - L298N 馬達驅動板
-![](https://i.imgur.com/xiya2uk.png)
+<img src="https://i.imgur.com/xiya2uk.png" width="300px"/>
 
 - Pi Camera
-![](https://i.imgur.com/57knbgJ.png)
-
+<img src="https://i.imgur.com/57knbgJ.png" width="100px"/>
 
 ## 架設過程
 ### 語音辨識
@@ -155,11 +153,12 @@ from flask import Flask, render_template, Response
     - `python app.py`
     - enter `http://你的ip:5000`
     - 如下圖
-    ![](https://i.imgur.com/tTpVuWP.png =500x)
+    <img src="https://i.imgur.com/tTpVuWP.png" width="500px"/>
     
 * cd flask-video-streaming/templates
     * `vim index.html`
-```html= <html>
+```html
+<html>
 <head>
     <title>Video Streaming Demonstration</title>
 </head>
@@ -179,7 +178,7 @@ from flask import Flask, render_template, Response
 </body>
 </html>
 ```
-![](https://i.imgur.com/zmNLzJW.png)
+<img src="https://i.imgur.com/zmNLzJW.png" width="500px"/>
 
 ### **網頁加密**
 * 安裝openssl
@@ -199,14 +198,15 @@ from flask import Flask, render_template, Response
 * 完成上面步驟會生成server.crt和server.key檔案
 
 * 在flask程式碼中引用此key(cd flask-video-streaming 修改 app.py)
-```python=
+```python
 # your_path: 放自己的路徑
 app = Flask(__name__)    
 app.run('0.0.0.0', debug=True, port=443, ssl_context=('your_path/server.crt', 'your_path/server.key'))  
 ```
 
 * cd flask-video-streaming/templates 修改 index.html
-```html= <html>
+```html
+<html>
 <head>
     <title>Video Streaming Demonstration</title>
 </head>
@@ -226,15 +226,15 @@ app.run('0.0.0.0', debug=True, port=443, ssl_context=('your_path/server.crt', 'y
 </body>
 </html>
 ```
-![](https://i.imgur.com/Gh8rd8X.png)
 
-![](https://i.imgur.com/IkvAVwT.png)
+<img src="https://i.imgur.com/Gh8rd8X.png" width="500px"/>
 
+<img src="https://i.imgur.com/IkvAVwT.png" width="500px"/>
 
 
 ### **車子組裝**
 * 馬達焊紅黑線
-![](https://i.imgur.com/wREH3Y7.png)
+<img src="https://i.imgur.com/wREH3Y7.png" width="250px"/>
 
 * 馬達紅線插於馬達 A、B 的右孔，黑線插於馬達 A、B 的左孔
 
@@ -243,8 +243,8 @@ app.run('0.0.0.0', debug=True, port=443, ssl_context=('your_path/server.crt', 'y
 * 旁邊四角( IN1~IN4 )接 Pi 的 GPIO，我們是從上而下對應 Pi GPIO 17, 18, 22, 23
 
 
-![驅動板對應圖](https://i.imgur.com/6vdohUc.png)
-![Pi GPIO 對應圖](https://i.imgur.com/gFrejPu.png)
+<img src="https://i.imgur.com/6vdohUc.png" width="350px" alt="驅動板對應圖"/>
+<img src="https://i.imgur.com/gFrejPu.png" width="350px" alt="Pi GPIO 對應圖"/>
 
 :::info
 1. 若輪子轉動很慢、馬達供電不足，可以多接線插於 5V、12V，Pi 上有兩個5V可以接
