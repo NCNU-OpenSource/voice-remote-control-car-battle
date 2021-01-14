@@ -104,26 +104,28 @@ async function app() {
 ```
 
 #### 操作網頁
-把 `remoteAudioCtrl` 資料夾放到兩個 PI 上面
-- 用 Flask 在兩個 PI 上各架一個 SERVER
+把 `remoteAudioCtrl` 資料夾放到兩個 Pi 上面
+- 用 Flask 在兩個 Pi 上各架一個 SERVER
+
+#### 在 `app.py` 存在的目錄底下輸入
+```html
 <div style="color:lightblue">
-#### 在`app.py`存在的目錄底下輸入
- ```sh
+ ```
  export FLASK_APP=app.py
  flask run --host 0.0.0.0 --port 10838
  ```
  - host 0.0.0.0 代表跑在本機上，在同一個區網底下（例如連上同一個手機發的wifi）可以在瀏覽器輸入 Pi 的 ip 跟 port 來連上網站
  - port 基本上可任意（數字盡量大一點）
 </div>
-:::info
+```
  > 建議在電腦上使用 Chrome 連入
  
  在 Chrome 網址列輸入`chrome://flags/`
- 找到`Insecure origins treated as secure`
+ 找到 `Insecure origins treated as secure`
  輸入剛剛架起來的網站包括 port 後 enable 他
  ![](https://i.imgur.com/3Lc65Vo.png)
- >因為網站會需要取得麥克風使用權限，不開這個 Chrome 會因為安全性問題而出錯
-:::
+ > 因為網站會需要取得麥克風使用權限，不開這個 Chrome 會因為安全性問題而出錯
+
 
 ### **即時投影**
 * 需開啟 Pi Camera
@@ -134,7 +136,7 @@ async function app() {
 * 先clone miguelgrinberg/flask-video-streaming
 `git clone https://github.com/miguelgrinberg/flask-video-streaming.git`
 
-* cd flask-video-streaming 修改 app.py
+* cd flask-video-streaming 修改 `app.py`
     - 註解掉第五行
     - 刪除第八行註解
 ```python
