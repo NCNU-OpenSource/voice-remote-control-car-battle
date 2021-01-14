@@ -245,13 +245,10 @@ app.run('0.0.0.0', debug=True, port=443, ssl_context=('{your_path}/server.crt', 
 <img src="https://i.imgur.com/6vdohUc.png" width="350px" alt="驅動板對應圖"/>
 <img src="https://i.imgur.com/gFrejPu.png" width="350px" alt="Pi GPIO 對應圖"/>
 
-```html
-<div style="background:lightblue>
+
 1. 若輪子轉動很慢、馬達供電不足，可以多接線插於 5V、12V，Pi 上有兩個5V可以接
 2. **Enable A、Enable B 請勿拔掉，他們是用來控制馬達驅使轉動的方向**
 3. 依插線接孔的不同，會需調整成自己連接對應的方式
-</div>
-```            
 
 
 ## DEMO 影片
