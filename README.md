@@ -13,18 +13,18 @@ LSA Final Project---芽控車大亂鬥
 
 ### 所使用的設備材料
 - Pi 3 或 Pi 4 (Pi 4 效果會比 Pi 3好)
-![](https://i.imgur.com/9NFq0eY.png =200x)
+![](https://i.imgur.com/9NFq0eY.png)
 
 
 - 單層自走車底盤
-![](https://i.imgur.com/ABNOezr.png =200x)
+![](https://i.imgur.com/ABNOezr.png)
 
 
 - L298N 馬達驅動板
-![](https://i.imgur.com/xiya2uk.png =200x)
+![](https://i.imgur.com/xiya2uk.png)
 
 - Pi Camera
-![](https://i.imgur.com/57knbgJ.png =100x)
+![](https://i.imgur.com/57knbgJ.png)
 
 
 ## 架設過程
@@ -32,7 +32,7 @@ LSA Final Project---芽控車大亂鬥
 #### 前置作業
 #### 專案是採用 Jupyter notebook 編輯
 - 使用 pip 安裝 Jupyter notebook
-```python=
+```python
 # install jupyter notebook
 sudo apt update
 sudo apt install python3-pip
@@ -42,11 +42,11 @@ pip install -U jupyter
 ```
 
 - 下載這個專案的 code 安裝 git
-```python=
+```python
 sudo apt install git
 ```
 - 在自己要存放的目錄底下 clone repo
-```python=
+```python
 git clone https://github.com/efficacy38/test_learning_LSA.git
 cd test_learning_LSA/
 ```
@@ -56,7 +56,7 @@ cd test_learning_LSA/
 1. 在training_custom_audio_model_in_python.ipynb
 > 第 33 行裡面我的設定是在 /tmp/speech_commands_v0.02 底下任何有檔名包含 zh 都會被 resampling 和變成之後訓練的 data set，所以請把你的音檔按照你想讓他辨識出的名子放在/tmp/speech_commands_v0.02並加個zh後墜，他就會在辨識的時候跑出你當初資料夾設定的名子
     
-```python=
+```python
 def resample_wavs(dir_path, target_sample_rate=44100):
 
 
@@ -97,7 +97,7 @@ for word in WORDS:
 
 3. 設定 tfjs 語音辨識 在/dev_web/index.js
 > 在 app function 中 model.json，和 metadata.json 的部分可以透過上傳model.json, metadata.json,和 group1-shard2of2.bin... 到 github，並且用 github 右上角那個raw按鍵，顯示出只有文檔的網頁，複製連結並照著格式去改完index.js，應該就可以打開 index.html 快樂的辨識囉
-```javascript=
+```js
 async function app() {
 // recognizer = speechCommands.create('BROWSER_FFT', null, 'https://raw.githubusercontent.com/efficacy38/test_LSA_audio_predict/main/model.json', 'https://raw.githubusercontent.com/efficacy38/test_LSA_audio_predict/main/metadata.json');  en+zh
     recognizer = speechCommands.create('BROWSER_FFT', null, 'https://raw.githubusercontent.com/efficacy38/test_LSA_audio_predict-zh-/main/model.json', 'https://raw.githubusercontent.com/efficacy38/test_LSA_audio_predict-zh-/main/metadata.json');
@@ -139,7 +139,7 @@ async function app() {
 * cd flask-video-streaming 修改 app.py
     - 註解掉第五行
     - 刪除第八行註解
-```python=
+```python
 #!/usr/bin/env python
 from flask import Flask, render_template, Response
 
@@ -179,7 +179,7 @@ from flask import Flask, render_template, Response
 </body>
 </html>
 ```
-![](https://i.imgur.com/zmNLzJW.png =600x)
+![](https://i.imgur.com/zmNLzJW.png)
 
 ### **網頁加密**
 * 安裝openssl
@@ -199,7 +199,7 @@ from flask import Flask, render_template, Response
 * 完成上面步驟會生成server.crt和server.key檔案
 
 * 在flask程式碼中引用此key(cd flask-video-streaming 修改 app.py)
-```python= 
+```python=
 # your_path: 放自己的路徑
 app = Flask(__name__)    
 app.run('0.0.0.0', debug=True, port=443, ssl_context=('your_path/server.crt', 'your_path/server.key'))  
@@ -228,13 +228,13 @@ app.run('0.0.0.0', debug=True, port=443, ssl_context=('your_path/server.crt', 'y
 ```
 ![](https://i.imgur.com/Gh8rd8X.png)
 
-![](https://i.imgur.com/IkvAVwT.png =300x)
+![](https://i.imgur.com/IkvAVwT.png)
 
 
 
 ### **車子組裝**
 * 馬達焊紅黑線
-![](https://i.imgur.com/wREH3Y7.png =200x)
+![](https://i.imgur.com/wREH3Y7.png)
 
 * 馬達紅線插於馬達 A、B 的右孔，黑線插於馬達 A、B 的左孔
 
@@ -243,8 +243,8 @@ app.run('0.0.0.0', debug=True, port=443, ssl_context=('your_path/server.crt', 'y
 * 旁邊四角( IN1~IN4 )接 Pi 的 GPIO，我們是從上而下對應 Pi GPIO 17, 18, 22, 23
 
 
-![驅動板對應圖](https://i.imgur.com/6vdohUc.png =300x)
-![Pi GPIO 對應圖](https://i.imgur.com/gFrejPu.png =200x)
+![驅動板對應圖](https://i.imgur.com/6vdohUc.png)
+![Pi GPIO 對應圖](https://i.imgur.com/gFrejPu.png)
 
 :::info
 1. 若輪子轉動很慢、馬達供電不足，可以多接線插於 5V、12V，Pi 上有兩個5V可以接
