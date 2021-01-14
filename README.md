@@ -1,33 +1,5 @@
 LSA Final Project---芽控車大亂鬥
 ===
-@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
- 
-.isa_info, .isa_success, .isa_warning, .isa_error {
-margin: 10px 0px;
-padding:12px;
- 
-}
-.isa_info {
-    color: #00529B;
-    background-color: #BDE5F8;
-}
-.isa_success {
-    color: #4F8A10;
-    background-color: #DFF2BF;
-}
-.isa_warning {
-    color: #9F6000;
-    background-color: #FEEFB3;
-}
-.isa_error {
-    color: #D8000C;
-    background-color: #FFD2D2;
-}
-.isa_info i, .isa_success i, .isa_warning i, .isa_error i {
-    margin:10px 22px;
-    font-size:2em;
-    vertical-align:middle;
-}
 ###### tags: `lsa`
 ## 動機發想
 - [靈感影片](https://www.youtube.com/watch?v=e6Ne29G8mbU&ab_channel=B.C.%26Lowy)
@@ -134,7 +106,7 @@ async function app() {
 #### 操作網頁
 把 `remoteAudioCtrl` 資料夾放到兩個 PI 上面
 - 用 Flask 在兩個 PI 上各架一個 SERVER
-:::success
+<div style="color:lightblue">
 #### 在`app.py`存在的目錄底下輸入
  ```sh
  export FLASK_APP=app.py
@@ -142,7 +114,7 @@ async function app() {
  ```
  - host 0.0.0.0 代表跑在本機上，在同一個區網底下（例如連上同一個手機發的wifi）可以在瀏覽器輸入 Pi 的 ip 跟 port 來連上網站
  - port 基本上可任意（數字盡量大一點）
-:::
+</div>
 :::info
  > 建議在電腦上使用 Chrome 連入
  
